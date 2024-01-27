@@ -1,0 +1,19 @@
+{
+	"tasks": {
+		"dev": "deno run --unstable-cron --allow-net=0.0.0.0 --allow-read=.env,.env.defaults,.env.example,data/logosdb.sqlite,data/logosdb.sqlite-journal --allow-write=data/logosdb.sqlite,data/logosdb.sqlite-journal --allow-env=PORT,DB_FILE,PUBLIC_URL,MAX_FILE_SIZE_BYTES,DEFAULT_EXPIRATION_MINUTES --watch main.ts",
+		"build": "ENV=production deno compile --unstable-cron --allow-read=.env,.env.defaults,.env.example,data/logosdb.sqlite,data/logosdb.sqlite-journal --allow-write=data/logosdb.sqlite,data/logosdb.sqlite-journal --allow-net=0.0.0.0 --allow-env=PORT,DB_FILE,PUBLIC_URL,MAX_FILE_SIZE_BYTES,DEFAULT_EXPIRATION_MINUTES --output logos main.ts"
+	},
+	"fmt": {
+		"useTabs": true,
+		"lineWidth": 240,
+		"indentWidth": 4,
+		"semiColons": false,
+		"singleQuote": true,
+		"proseWrap": "preserve"
+	},
+	"lint": {
+		"rules": {
+			"exclude": ["no-explicit-any"]
+		}
+	}
+}
