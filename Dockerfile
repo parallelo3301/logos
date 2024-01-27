@@ -2,9 +2,6 @@ FROM denoland/deno:1.40.2
 
 WORKDIR /app
 
-RUN mkdir -p /app/data
-RUN chown -R deno:deno /app
-
 # Prefer not to run as root.
 USER deno
 
