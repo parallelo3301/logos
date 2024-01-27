@@ -68,28 +68,23 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./data/:/app/data/
+      - logos-data:/app/data/
+
+volumes:
+  logos-data:
 ```
 
-2. Create `data` dir and empty `logosdb.sqlite` and `logosdb.sqlite-journal` files:
+2. Configure your reverse proxy (or add it to the `docker-compose.yml`) based on your needs.
 
-```bash
-mkdir data
-touch data/logosdb.sqlite
-touch data/logosdb.sqlite-journal
-```
-
-3. Configure your reverse proxy (or add it to the `docker-compose.yml`) based on your needs.
-
-4. Run the stack
+3. Run the stack
 
 ```bash
 docker compose up -d
 ```
 
-5. You can access it at your `PUBLIC_SERVER_URL`, e.g. `http://localhost:3000`.
+4. You can access it at your `PUBLIC_SERVER_URL`, e.g. `http://localhost:3000`.
 
-6. Profit
+5. Profit
 
 # Disclaimer
 
