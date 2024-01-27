@@ -29,7 +29,7 @@ db.execute(`
 `)
 
 const template = (content: string) => {
-	const style = `@media (prefers-color-scheme: dark) { body { background: #36393d; color: #fff; } }`
+	const style = `.link { color: black; text-decoration: none; border-bottom: 1px dashed black; } @media (prefers-color-scheme: dark) { body { background: #36393d; color: #fff; } .link { color: white; border-bottom: 1px dashed white; } }`
 	return `<!DOCTYPE html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>📝 logos</title><style>${style}</style></head><body><pre>${content}</pre></body></html>`
 }
 
@@ -39,7 +39,7 @@ app.use('*', logger())
 app.use('*', cors())
 
 app.get('/', (c: Context) =>
-	c.html(template(`<div style="padding: 10px">👋 logos<br>
+	c.html(template(`<div style="padding: 10px"><a class="link" target="_blank" href="https://github.com/parallelo3301/logos">👋 logos</a><br>
 <form method="POST" action="/"><label>Password (optional)<br><input type="password" name="password" placeholder="anything..." /></label><br>
 <textarea name="file" placeholder="your text" style="width: 100%; height: 50vh"></textarea><br>
 <input type="hidden" name="isBrowser" value="1" />
