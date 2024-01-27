@@ -56,7 +56,7 @@ PORT=3000 PUBLIC_URL=https://logos.example.ltd MAX_FILE_SIZE_BYTES=50 DEFAULT_EX
 version: '3'
 
 services:
-  server:
+  logos:
     image: ghcr.io/parallelo3301/logos:latest
     restart: unless-stopped
     environment:
